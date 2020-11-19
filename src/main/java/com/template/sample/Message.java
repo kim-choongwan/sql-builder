@@ -3,11 +3,29 @@ package com.template.sample;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "messages")
 public class Message {
 
-	// For unsaved message, the id will be null
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
 	private Integer id;
+	
+	@Column(name = "text", nullable = false, length = 128)
 	private String text;
+
+	@Column(name = "created_date", nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdDate;
 
 	public Message(String text) {

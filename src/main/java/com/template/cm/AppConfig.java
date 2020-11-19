@@ -2,10 +2,13 @@ package com.template.cm;
 
 import java.util.Arrays;
 
+import javax.sql.DataSource;
+
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import com.template.cm.filter.AuditingFilter;
 
@@ -14,6 +17,12 @@ import com.template.cm.filter.AuditingFilter;
 @ComponentScan("com.template")
 public class AppConfig {
 
+	private DataSource dataSource;
+	
+	public AppConfig(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+	
 	@Bean
 	public FilterRegistrationBean<AuditingFilter> auditFilterRegistrationBean(){
 		
@@ -26,5 +35,14 @@ public class AppConfig {
 		
 		return registrationBean; 
 		
-	} 
+	}
+	
+	@Bean
+	public LocalSessionFactoryBean sessionFactory() {
+		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
+		sessionFactoryBean.setDataSource(dataSource);
+		sessionFactoryBean.setPackagesToScan("com.template");
+		return sessionFactoryBean;
+	}
+		
 }
