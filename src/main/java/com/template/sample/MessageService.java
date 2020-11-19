@@ -1,5 +1,7 @@
 package com.template.sample;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +14,17 @@ public class MessageService {
 	MessageRepository repository;
 
 	@SecurityCheck
+	@Transactional
+//	@Transactional(dontRollbackOn = {UnsupportedOperationException.class })
 	public Message save(String text) {
-		return repository.saveMessage(new Message(text));
+		Message message = repository.saveMessage(new Message(text));
+		if("".equals(text))
+			error();
+		return message;
+	}
+
+	private void error() {
+		throw new UnsupportedOperationException("this method is not implemented yet");
 	}
 
 }
