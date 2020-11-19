@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>vue</title>
+<link rel="stylesheet" href="/css/font-awesome/font-awesome.min.css">
+<script src="/js/vue/vue.min.js"></script>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+<div id="app" v-cloak>   
+	{{value}}	
+</div>
+<script type="module">
+let vm = new Vue({
+	el:'#app'
+	,data:{
+		value:'작동한다.'
+	}
+});
+</script>
+</body>
+</html>
