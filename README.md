@@ -1,4 +1,4 @@
-# tempate03-springboot-web-jdbc
+# tempate
 springboot
 maven
 web
