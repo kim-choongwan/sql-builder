@@ -1,2 +1,5 @@
-# tempate01-spring
-spring + mvn project
+# tempate03-springboot-web-jdbc
+springboot
+maven
+web
+jdbc
