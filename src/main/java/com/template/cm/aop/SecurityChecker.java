@@ -18,6 +18,7 @@ public class SecurityChecker {
 	public void checkMethodSecurity() {
 	}
 
+	//advice
 	@Around("checkMethodSecurity()")
 	public Object checkSecurity(ProceedingJoinPoint joinPoint) throws Throwable {
 		logger.debug("Checking method security...");
