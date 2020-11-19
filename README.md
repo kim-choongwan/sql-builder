@@ -2,4 +2,4 @@
 springboot
 maven
 web
-jdbc
+hibernate
