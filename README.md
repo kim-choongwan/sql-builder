@@ -1,5 +1,6 @@
 # tempate
 springboot
-maven
-web
-hibernate
++maven
++web
++hibernate
++vue
