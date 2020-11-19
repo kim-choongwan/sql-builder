@@ -1,0 +1,19 @@
+
+
+-- 접속확인 (사용자 변경)
+-- 생략
+
+-- 테이블 생성
+CREATE TABLE MESSAGES (
+  ID INT NOT NULL ,
+  TEXT VARCHAR(128) NOT NULL ,
+  CREATED_DATE  DATE  DEFAULT SYSDATE,
+  PRIMARY KEY (ID)
+) ;
+
+
+-- 테이블 생성 확인
+SELECT * FROM USER_TABLES;
+
+-- 시퀀스 생성
+CREATE SEQUENCE SQ_MESSAGES_ID;
