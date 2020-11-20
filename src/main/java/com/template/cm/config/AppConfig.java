@@ -38,7 +38,7 @@ public class AppConfig {
 		AuditingFilter filter = new AuditingFilter();
 		registrationBean.setFilter(filter);
 		registrationBean.setOrder(Integer.MAX_VALUE);
-		registrationBean.setUrlPatterns(Arrays.asList("/*"));
+		registrationBean.setUrlPatterns(Arrays.asList("/api/*"));
 		
 		return registrationBean; 
 		
