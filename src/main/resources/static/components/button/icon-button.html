@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ICON BUTTON</title>
+	<!-- 
+	<link rel="stylesheet" href="/css/font-awesome/font-awesome.min.css">
+	 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<script src="/js/vue/vue.min.js" ></script>
+	<style type="text/css">
+		[v-cloak] {display:none;}
+		.iconbutton {color: black; }
+		.iconbutton.on { background-color:gray; transition:all 0.1s;}
+		.iconbutton:hover {color: orange; }
+		/*
+		.iconbutton.on { color: orange; transition:all 0.1s;}
+		.iconbutton:hover { background-color:gray; }
+		*/
+		.icon-button-text {font-size: 16px;}
+	</style>
+</head>
+<body>
+<div id="app" v-cloak>   
+	<tool-bar />	
+</div>
+<script type="module">
+import ToolBar from './ToolBar.js';
+
+let vm = new Vue({
+	el:'#app'
+	,data:{
+	}
+	,components:{
+		ToolBar
+	}
+});
+</script>
+<hr/>
+
+<span style="color: red; " >
+	<i class="fa fa-file fa-lg fa-border" aria-hidden="true" > <span style="font-size: 14px">파일</span></i>
+</span>
+
+
+</body>
+</html>
