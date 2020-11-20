@@ -1,4 +1,4 @@
-package com.template.sample;
+package com.template.sample.web;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -11,8 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.template.sample.model.Message;
+import com.template.sample.model.MessageData;
+import com.template.sample.service.MessageService;
+
 @Controller
-@RequestMapping("/sample")
+@RequestMapping("/api/sample")
 public class MessageController {
 
 	protected final Log logger = LogFactory.getLog(getClass());
@@ -21,12 +25,6 @@ public class MessageController {
 
 	public MessageController(MessageService messageService) {
 		this.messageService = messageService;
-	}
-
-	@GetMapping("/welcome")
-	public String welcome(Model model) {
-		model.addAttribute("message", "Hello, Welcome to Spring Boot!");
-		return "welcome";
 	}
 
 	@PostMapping("/messages.json")

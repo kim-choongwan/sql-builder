@@ -1,4 +1,4 @@
-package com.template.cm;
+package com.template.cm.config;
 
 import java.util.Arrays;
 

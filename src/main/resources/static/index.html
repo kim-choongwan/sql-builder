@@ -13,7 +13,7 @@ function go(){
 	var data = {text:"Hello, Spring"}
 	
     $.ajax({
-        url:'/sample/messages.json',
+        url:'/api/sample/messages.json',
         type:'post',
         dataType : 'json',
         contentType: "application/json; charset=UTF-8",
@@ -35,7 +35,7 @@ function go(){
 <body>
 Hi, spring-boot web
 <div>
-<a href="/sample/welcome">controller-view</a><br/>
+<a href="/welcome">controller-view</a><br/>
 <a href="javascript:go();">json호출</a><br/>
 <a href="/vue.html">vue.html</a><br/>
 </div>

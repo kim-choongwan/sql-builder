@@ -1,4 +1,4 @@
-package com.template.sample;
+package com.template.sample.model;
 
 import java.util.Date;
 import java.util.Objects;
