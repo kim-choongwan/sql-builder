@@ -1,4 +1,4 @@
-package com.template.sample;
+package com.template.sample.service;
 
 import javax.transaction.Transactional;
 
@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.template.cm.aop.SecurityCheck;
+import com.template.sample.model.Message;
+import com.template.sample.repository.MessageRepository;
 
 @Service
 public class MessageService {
