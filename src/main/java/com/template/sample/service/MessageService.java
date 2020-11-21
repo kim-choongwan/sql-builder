@@ -1,7 +1,5 @@
 package com.template.sample.service;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +14,7 @@ public class MessageService {
 	MessageRepository repository;
 
 	@SecurityCheck
-	@Transactional
+//	@Transactional
 //	@Transactional(dontRollbackOn = {UnsupportedOperationException.class })
 	public Message save(String text) {
 		Message message = repository.saveMessage(new Message(text));
