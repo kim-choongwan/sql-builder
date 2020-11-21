@@ -1,30 +1,33 @@
+import ButtonInfo from './ButtonInfo.js';
+
 export default{
 	 name : 'IconButton'
-	,template : `<span :class="{'iconbutton':iconbutton,'on':on}">
-					<i :class="classes" aria-hidden="true"
-						v-on="{ mousedown : mousedown
-						,mouseup : mouseup
-						,click : click
-						}"
-						style="cursor: pointer">
-						<span class="icon-button-text"> {{text}}</span>
-					</i>	
-				</span>`
-		
+			,template : 
+`<span :class="{'iconbutton':iconbutton,'on':on}">
+	<i	:class="classes"
+		v-on="{ mousedown : mousedown
+			   ,mouseup : mouseup
+		       ,click : click
+		       }" >
+		<span v-if="texton=='on'" class="icon-button-text"> {{text}}</span>
+	</i>	
+</span>`
 	,props : {
-		icontype : {
+		type : {
 			type:String
-			,required : true
-		}
-		,text : {
+			,required:true
+		},
+		texton:{
 			type:String
 		}
 	}
 	,data : function(){
+		var info = ButtonInfo[this.type]; //버튼정보
 		return {
-			 classes : " "+this.icontype+" fa-lg fa-border"
-			,iconbutton:true
-			,on : false
+			classes : " "+info.iconClass+" fa-lg fa-border btn",
+			iconbutton:true,
+			on : false,
+			text : info['text'],
 		}
 	}
 	,methods : {
@@ -36,6 +39,7 @@ export default{
 		}
 		,click(event){
 			this.$emit('beforeclick',event);
+			ButtonInfo[this.type].onClick();
 			this.$emit('click',event);
 		}
 	}
