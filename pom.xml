@@ -41,18 +41,18 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-		<!-- jdbc -->
+		<!-- jdbc 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
-
-		<!-- orm for hibernate -->
+-->
+		<!-- orm for hibernate 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 		</dependency>
-
+-->
 		<!-- mysql 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -60,19 +60,19 @@
 		</dependency>
 		-->
 
-		<!-- oracle -->
+		<!-- oracle 
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc7</artifactId>
 			<version>12.1.0.2</version>
 		</dependency>
-
-		<!-- hibernate -->
+-->
+		<!-- hibernate 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
-
+-->
 	</dependencies>
 
 	<build>
