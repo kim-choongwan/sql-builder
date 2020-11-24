@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+<div id="app" v-cloak >
+	<base-layout>
+	  <template v-slot:header>
+	    <h1>Here might be a page title</h1>
+	  </template>
+	
+	  <p>A paragraph for the main content.</p>
+	  <p>And another one.</p>
+	
+	  <template v-slot:footer>
+	    <p>Here's some contact info</p>
+	  </template>	
+	</base-layout>
+</div>
+<script type="module">
+import BaseLayout from './BaseLayout.js'
+
+let vm = new Vue({
+	el:'#app',
+	data:{
+	},
+	methods:{
+	},
+	components:{
+		BaseLayout
+	},
+});
+</script>
+</body>
+</html>

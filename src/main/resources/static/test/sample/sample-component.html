@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak >
+		<sample-component customer-value1="fuck!" :customer-value2="bindingValue" @new-event="method1"></sample-component>
+	</div>
+	<script type="module">
+import SampleComponent from './SampleComponent.js'
+
+//Vue.directive('contextmenu', ContextMenu.Directive);
+ 
+let vm = new Vue({
+	el:'#app',
+	data:{
+		bindingValue : "hi components!!",
+	},
+	methods:{
+		method1:function(e){ alert(e.m);},
+	},
+	components:{
+		SampleComponent
+	},
+});
+</script>
+	<hr />
+</body>
+</html>
