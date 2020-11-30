@@ -73,6 +73,13 @@
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
 -->
+		<!-- vue -->
+		<dependency>
+		    <groupId>org.webjars.npm</groupId>
+		    <artifactId>vue</artifactId>
+		    <version>3.0.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

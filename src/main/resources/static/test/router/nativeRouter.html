@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Router</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak >
+		<router-view></router-view>
+	</div>
+
+	<script type="module">
+
+
+var User        = {template:`<div>User Component <router-view></router-view></div>`};
+var UserProfile = {template:`<div>User Profile Component</div>`};
+var UserPost    = {template:`<div>User Post Component</div>`};
+
+
+var routes = [
+	{
+		path:'/user', 
+		component:User,
+		children:[
+			{
+				path:'posts',
+				component:UserPost,
+			},
+			{
+				path:'profile',
+				component:UserProfile,
+			},
+		],
+	}
+];
+
+var router = new VueRouter({
+	routes
+});
+
+var app = new Vue({
+	el:'#app',
+	router:router,
+});
+
+</script>
+	<hr />
+</body>
+</html>

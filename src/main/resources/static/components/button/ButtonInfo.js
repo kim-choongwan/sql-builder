@@ -15,6 +15,7 @@ export default{
 		iconClass : "fa fa-plug",
 		onClick : function(event){
 			console.log('DB를 접속한다.');
+			lkhlklkj
 		},
 	},
 	download : {
