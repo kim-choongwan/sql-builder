@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ICON BUTTON</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+
+.iconbutton {
+	color: black;
+}
+
+.iconbutton.on {
+	background-color: gray;
+	transition: all 0.1s;
+}
+
+.iconbutton:hover {
+	color: orange;
+}
+
+.btn {
+	cursor: pointer
+}
+/*
+	.iconbutton.on { color: orange; transition:all 0.1s;}
+	.iconbutton:hover { background-color:gray; }
+	*/
+.icon-button-text {
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak>
+		<input> <input v-focus v-model='a'> //v-focus가 있으면 자동으로 포커싱된다.
+	</div>
+	<script type="module">
+// 전역 사용자 정의 디렉티브 v-focus 등록
+Vue.directive('focus', {
+  bind: function (el) {
+	console.log('## bind');
+	console.log(el);
+    el.focus()
+  },
+  inserted: function (el) {
+	console.log('## inserted');
+	console.log(el);
+    el.focus()
+  },
+  update: function (el) {
+	console.log('## update');
+	console.log(el);
+    el.focus()
+  },
+})
+
+let vm = new Vue({
+	el:'#app'
+	,data:{
+		a:"1"
+	}
+	,components:{
+	}
+});
+</script>
+	<hr />
+
+
+</body>
+</html>

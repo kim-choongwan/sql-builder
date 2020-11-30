@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak >
+<navigation-link url="/profile">
+  <span class="fa fa-user"></span>
+  Logged in as {{ user.name }}
+</navigation-link>
+	</div>
+	<script type="module">
+import NavigationLink from './NavigationLink.js'
+
+//Vue.directive('contextmenu', ContextMenu.Directive);
+ 
+let vm = new Vue({
+	el:'#app',
+	data:{
+		user:{
+			name : "kim.choong.wan"
+		}
+	},
+	methods:{
+	},
+	components:{
+		NavigationLink
+	},
+});
+</script>
+	<hr />
+</body>
+</html>

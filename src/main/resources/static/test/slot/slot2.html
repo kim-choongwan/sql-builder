@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak >
+	<submit-button>제출</submit-button>
+	</div>
+	<script type="module">
+import SubmitButton from './SubmitButton.js'
+
+let vm = new Vue({
+	el:'#app',
+	data:{
+	},
+	methods:{
+	},
+	components:{
+		SubmitButton
+	},
+});
+</script>
+	<hr />
+</body>
+</html>

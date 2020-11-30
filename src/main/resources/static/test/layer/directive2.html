@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>레이어 테스트</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+
+.iconbutton {
+	color: black;
+}
+
+.iconbutton.on {
+	background-color: gray;
+	transition: all 0.1s;
+}
+
+.iconbutton:hover {
+	color: orange;
+}
+
+.btn {
+	cursor: pointer
+}
+/*
+	.iconbutton.on { color: orange; transition:all 0.1s;}
+	.iconbutton:hover { background-color:gray; }
+	*/
+.icon-button-text {
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak>
+		<div v-contextmenu="contextmenu">//v-contextmenu가 있으면 자동으로
+			포커싱된다.</div>
+		<context-menu>dd</context-menu>	
+	</div>
+	<script type="module">
+// 전역 사용자 정의 디렉티브 v-contextmenu 등록
+Vue.directive('contextmenu', {
+  bind: function (el) {
+	console.log('## bind');
+	console.log(el);
+  },
+  inserted: function (el,binding,vnode,oldVnode) {
+	console.log('## inserted');
+	//console.log(binding); //레퍼런스 바인딩만 받을 수 있다.
+	console.log(el);
+	el.addEventListener('mousedown',function(){
+  if ((event.button == 2) || (event.which == 3)) { //우클릭
+		console.log('mousedown');
+		//객체를 동적으로 생성해도 될까?vue와 충돌이 발생하지 않을까?
+		//여기서 vue에 접근할 수는 없을까? 그럼 this로 접근하면 되지 아닌가?? 
+		//console.log(this);
+		//->> 안된다. 여기서의 this는 vue가 아닌 html의 Element객체이다..
+		//console.log(el);
+		// 다시말해 el 과 동급이다...
+		// 그러고 보니 여기서 this가 vue일 수가 없네. 왜냐햐면 directive는 vue에 붙이는 것이 아니라. vue 의 컴포넌트의 template에 서 설정되는 것이니깐..
+		//console.log(vnode);
+		//console.log(oldVnode);
+
+  };
+
+	})
+  },
+  update: function (el) {
+	console.log('## update');
+	console.log(el);
+  },
+})
+
+let vm = new Vue({
+	el:'#app'
+	,data:{
+		contextmenu:[
+        	"file",
+        	"connection",
+        	"download",
+		],
+	}
+	,components:{
+		ContextMenu : {
+			name : 'ContextMenu',
+			template :`<div display="display:none;position:fixed;width:150px; height:200px; background: #fff;box-shadow:1px 1px 5px 0 rgba(0, 0, 0, 0.54)">레이어팝업</div>`,
+			data : function(){
+				전역에 this를 뭍어주자.
+				return {}
+			}
+		}
+	}
+});
+</script>
+	<hr />
+	<pre>
+contextmenu를 처리하기 위한 directive를 만들어서 처리하려고 하였으나..
+잘 안된다.
+directive로 접근할 수 있는 것은 vue가 아니라. html노드만 가능하다..
+directive에서 하위에 어떻게 노드를 만들고 관리해야 할지 모르겠다...
+component처럼 template이 있는 것도 아니고..
+그냥 document 밑에 vue가 아닌 html로 붙여야 할까??? 
+-> 이건 아닌 듯 하다.. 왜냐하면 vue의 장점을 사용하지 못하기 때문이다.
+
+그러면 contextmenu component를 최상위 노드에서 하나 만들어 심어 놓고.
+이것을 호출하도록 해야할까?
+그러면... 최상위 전역 객체에 낙서가 되는데... 그래도 될지.. 왠만하면 이 방법은 쓰고 싶지 않다...
+왜냐하면 contextmenu 가 한 페이지가 여러개가 올 수 있고. 
+그 여러개를 재사용하는 구조가 된다면..
+(contextmenu 의 메뉴가 동적으로 변경될 수 있는 노드도 있겠으나 그렇지 않은 노드도 충분히 존재 할 수 있으므로.. 
+그리고 우클릭시 컨텍스트 메뉴가 아닌 다른 무언가의 처리가 있을 수도 있다...)
+
+컴포넌트를 더 읽어야 할 듯..
+</pre>
+</body>
+</html>

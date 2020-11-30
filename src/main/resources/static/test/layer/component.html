@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>레이어 테스트</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<!-- 
+<script src="/js/vue/vue.min.js"></script>
+<script src="/webjars/vue/3.0.2/index.js"></script>
+<script src="/webjars/vue/3.0.2/dist/vue.cjs.js"></script>
+ -->
+<script src="/js/vue/vue.min.js"></script>
+
+
+<style type="text/css">
+html, body { height: 100%; }
+
+.custom-context-menu {
+  position: absolute;
+  box-sizing: border-box;
+  min-height: 100px;
+  min-width: 200px;
+  background-color: #ffffff;
+  box-shadow: 0 0 1px 2px lightgrey;
+}
+
+.custom-context-menu ul {
+  list-style: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.custom-context-menu li {
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+.custom-context-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.dim {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(253, 199, 154, 0.8);
+	filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+[v-cloak] {
+	display: none;
+}
+
+.iconbutton {
+	color: black;
+}
+
+.iconbutton.on {
+	background-color: gray;
+	transition: all 0.1s;
+}
+
+.iconbutton:hover {
+	color: orange;
+}
+
+.btn {
+	cursor: pointer
+}
+/*
+	.iconbutton.on { color: orange; transition:all 0.1s;}
+	.iconbutton:hover { background-color:gray; }
+	*/
+.icon-button-text {
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak >
+		<div style="width: 100px;height: 100px;background-color: red;" @contextmenu.prevent="$refs.ctxmn.open">우클릭되는 영역</div>
+		<context-menu ref="ctxmn" :menus="menulist" ></context-menu>
+	</div>
+	<script type="module">
+import ContextMenu from './ContextMenu.js';
+
+let vm = new Vue({
+	el:'#app',
+	data:{
+		menulist : [
+			"menu1","menu2","menu3","menu4","menu5","menu6"
+		],
+	},
+	methods:{
+	},
+	components:{
+		ContextMenu
+	},
+});
+</script>
+</body>
+</html>

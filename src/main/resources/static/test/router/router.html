@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Router</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<hr />
+	<div id="app" v-cloak >
+		<h1>뷰 라우터 예제</h1>
+		<p>
+			<router-link to="/main">Main 컴포넌트로 이동</router-link>		
+			<router-link to="/login">Login 컴포넌트로 이동</router-link>		
+		</p>
+		<router-view></router-view>
+	</div>
+	<script type="module">
+var Main  = {template:'<div>main</div>'};
+var Login = {template:'<div>login</div>'};
+
+var routes = [
+	{path:'/main', component:Main},
+	{path:'/login', component:Login},
+];
+
+var router = new VueRouter({
+	mode:"history", //와 이런게 어떻게 가능한거지???
+	routes
+});
+
+var app = new Vue({
+	el:'#app',
+	router:router,
+});
+
+</script>
+	<hr />
+</body>
+</html>

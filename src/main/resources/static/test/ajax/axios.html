@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Axios</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/axios/axios.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+<div id="app" v-cloak >
+	<h1>사용자 목록</h1>
+	<p>
+		<button @click="getData">조회</button>
+		<ul>
+			<li v-for="user in users">{{user.title}}</li>
+		</ul>
+	</p>
+</div>
+	<script type="module">
+
+var app = new Vue({
+	el:'#app',
+	data:{
+		users:[],
+	},
+	methods:{
+		getData(){
+			var me = this;
+			axios
+			.get('https://jsonplaceholder.typicode.com/posts')
+			.then(function(response){
+				console.log(response.data);
+				me.users = response.data;
+			});
+		}
+	},
+});
+
+
+</script>
+</body>
+</html>

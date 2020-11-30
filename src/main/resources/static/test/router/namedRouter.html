@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Router</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+<div id="app" v-cloak >
+	<router-view name="header"></router-view>
+	<router-view></router-view>
+	<router-view name="footer"></router-view>
+</div>
+
+	<script type="module">
+
+
+var Body   = {template:`<div>Body</div>`};
+var Header = {template:`<div>Header</div>`};
+var Footer = {template:`<div>Footer</div>`};
+
+var routes = [
+	{
+		path:'/', 
+		components:{
+			default:Body,
+			header:Header,
+			footer:Footer,
+		}
+	}
+];
+
+var router = new VueRouter({
+	routes
+});
+
+var app = new Vue({
+	el:'#app',
+	router:router,
+});
+
+</script>
+</body>
+</html>

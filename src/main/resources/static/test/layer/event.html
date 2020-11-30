@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>레이어 테스트</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+
+.iconbutton {
+	color: black;
+}
+
+.iconbutton.on {
+	background-color: gray;
+	transition: all 0.1s;
+}
+
+.iconbutton:hover {
+	color: orange;
+}
+
+.btn {
+	cursor: pointer
+}
+/*
+	.iconbutton.on { color: orange; transition:all 0.1s;}
+	.iconbutton:hover { background-color:gray; }
+	*/
+.icon-button-text {
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<div id="A"  style=" background-color: red;">d
+	<div id="AA" style=" background-color: blue;">d
+		<div id="AAA" style="width: 100px;height: 100px; background-color: black;">d
+		</div>
+		<div id="AAB" style="width: 100px;height: 100px; background-color: yellow;">d
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+//var el = document;
+var el = document.getElementById("AAB");
+el.addEventListener("click",  function(e){
+	console.log("el");
+	console.log(this);
+} , false);
+
+document.addEventListener("click",  function(e){
+	console.log("document");
+	console.log(this);
+	console.log(e);
+} , false);
+</script>
+
+<pre>
+이벤트는 바인딩 된 객체가 this가 된다.
+document에 심은 이벤트의 this는 document가 되고.
+#AAB에 심은 이벤트의 this는 #AAB가 된다..
+이벤트 객체를 뒤지면 쓸만한 무언가가 나올 수 있을지 모르지만. 사용하기에 적절해 보이지 않는다..
+</pre>
+</body>
+</html>

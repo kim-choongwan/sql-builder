@@ -11,8 +11,8 @@ export default{
 		       }" >
 		<span v-if="texton=='on'" class="icon-button-text"> {{text}}</span>
 	</i>	
-</span>`
-	,props : {
+</span>`,
+	props : {
 		type : {
 			type:String
 			,required:true
@@ -20,17 +20,17 @@ export default{
 		texton:{
 			type:String
 		}
-	}
-	,data : function(){
+	},
+	data : function(){
 		var info = ButtonInfo[this.type]; //버튼정보
 		return {
 			classes : " "+info.iconClass+" fa-lg fa-border btn",
 			iconbutton:true,
 			on : false,
-			text : info.text,
+			text : info['text'],
 		}
-	}
-	,methods : {
+	},
+	methods : {
 		mousedown(event){
 			this.on = true;
 		}
@@ -42,6 +42,6 @@ export default{
 			ButtonInfo[this.type].onClick();
 			this.$emit('click',event);
 		}
-	}
+	},
 }
 
