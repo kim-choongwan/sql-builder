@@ -1,0 +1,112 @@
+body, p, .init{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+ul{
+	margin : 0px;
+	padding-left : 20px;
+}
+
+li::marker {
+	content : "";
+}
+
+#app{
+	font-size : 0px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+.wrap{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	display: inline-block;
+	font-size : 0px;
+}
+
+.main {
+	height: 100vh;
+	width: 100%;
+	max-height : 100vh;
+}
+
+.top{
+	width : 100%;
+	height : 15%;	
+	/* min-height : 10%;
+	max-height : 20%; */
+}
+
+.sizingX{
+	height : 0.4%;
+	background : black;
+}
+
+.sizingX:hover{
+	cursor: row-resize;
+}
+
+.sizingY{
+	width : 0.4%;
+	height: 100%;
+	background : black;
+	float: left;
+}
+
+.sizingY:hover{
+	cursor: col-resize;
+}
+
+.container{
+	width : 100%;
+	height : 84.3%;
+}
+
+.container::after{
+	content: "";
+	clear : both;
+}
+
+.left{
+	width : 28.6%;
+	height: 100%;
+	float: left;
+}
+
+.right{
+	width : 20.6%;
+	height: 100%;
+	float: left;
+}
+
+.center{
+	width : 50%;
+	height: 100%;
+	float: left;
+}
+
+
+.item{
+	font-size : 15px;
+	display : block;
+}
+
+.item-up > .menu-icon,
+.item-down > .menu-icon,
+.item-empty > .menu-icon{
+	width : 15px;	
+	text-align: center;
+	display : inline-block;
+}
+ .item-up > .menu-icon::after{
+	content : "+";	 
+}
+
+.item-down > .menu-icon::after,
+.item-empty > .menu-icon::after{
+	content : "-";
+}
