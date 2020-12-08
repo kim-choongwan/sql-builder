@@ -89,24 +89,28 @@ li::marker {
 	float: left;
 }
 
-
-.item{
+.search{
+	height : 10%;
+}
+.menu{
 	font-size : 15px;
 	display : block;
+	overflow : scroll;
+	height : 90%;
 }
 
-.item-up > .menu-icon,
-.item-down > .menu-icon,
-.item-empty > .menu-icon{
+.menu-up > .menu-icon,
+.menu-down > .menu-icon,
+.menu-empty > .menu-icon{
 	width : 15px;	
 	text-align: center;
 	display : inline-block;
 }
- .item-up > .menu-icon::after{
+ .menu-up > .menu-icon::after{
 	content : "+";	 
 }
 
-.item-down > .menu-icon::after,
-.item-empty > .menu-icon::after{
+.menu-down > .menu-icon::after,
+.menu-empty > .menu-icon::after{
 	content : "-";
 }
