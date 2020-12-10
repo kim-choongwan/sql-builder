@@ -29,9 +29,9 @@ export default{
 	},
 	created(){
 		let elementObject = {};
-		elementObject.COLUMNS = [];
-		elementObject.INDEXS = [];
-		elementObject.CONSTRANINTS = [];
+		elementObject.COLUMNS = ['col1','col2','col3','col4']; 
+		elementObject.INDEXS = ['index1','index2','index3'];
+		elementObject.CONSTRANINTS = ['const1','const2'];
 		let tableList = [];
 		for(let index = 0; index < 10; index++){
 			let table = {};
@@ -44,6 +44,7 @@ export default{
 		items.FUNCTIONS = ['function1','function2','function3'];
 		items.TRIGGERS = ['trigger1','trigger2','trigger3'];
 		this.items = items;
+		console.log(this.items); 
 	},
 	components : {
 		topWrap,
