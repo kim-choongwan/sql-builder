@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vue.js-SQL</title>
+<script src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+html, body{
+	height: 100%;
+	background: #ff6666;
+	
+}
+
+header {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	height:30px;
+	background: #ffdb4d;
+	padding:2px;
+}
+.center{
+	position:fixed;
+	top:30px;
+	left:0;
+	bottom:20px;
+	width:100%;
+	background: green;
+	overflow: hidden;
+}
+footer.footer {
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	height:20px;
+	background: #ffdb4d;
+}
+nav{
+	position:relative;
+	top:0;
+	bottom:0;
+	left:0;
+	width:200px;
+	height:100%;
+	background: #ccddff;
+	float: left;
+}
+
+.spliter{
+	background: gray;
+	width:5px;
+	height:100%;
+	cursor: w-resize;
+	float: left;
+}
+
+
+
+main{
+	background: #ccddff;
+	width:calc(100% - 410px);;
+	height:100%;
+	float: left;
+}
+
+aside{
+	width:200px;
+	height:100%;
+	background: #ccddff;
+	float: left;
+}
+.top-tool-box{
+	
+	background: #ccddff;
+}
+</style>
+</head>
+<body>
+<div id="app">
+	<header class="header">
+		<!-- 
+		<h5>TOP</h5>
+		 -->
+		<div class="top-tool-box">
+			<h5>toptoolbox</h5>
+		</div>
+	</header>
+	<div class="center">
+		<nav>
+			<h5>navi</h5>
+		</nav>
+		<div class="spliter">
+		</div>
+		<main class="main">
+			<h5>main</h5>
+		</main>
+		<div class="spliter">
+		</div>
+		<aside>
+			<h5>aside</h5>
+		</aside>
+	</div>
+	<footer class="footer">
+		<h5>FOOTER</h5>
+	</footer>
+</div>
+</body>
