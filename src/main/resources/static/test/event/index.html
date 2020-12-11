@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+</style>
+</head>
+<body>
+<div id="app" v-cloak >{{bindingValue}}
+	<button @click="a">this 확인</button>
+	<child1></child1>
+	<child2></child2>
+</div>
+<script type="module">
+import Child1 from './child1.js'; 
+import Child2 from './child2.js'; 
+Vue.prototype.eventBus = new Vue();
+
+let vm = new Vue({
+	el:'#app',
+    created() {
+    	this.eventBus.$on('child1-event', function(){
+		});
+    },
+	data:{
+		bindingValue : "hi components!!",
+	},
+	methods : {
+		a:function(){
+			console.log(this);
+			debugger;
+		}
+	},
+	components : {
+		Child1,Child2
+	}
+});
+</script>
+</body>
+</html>
