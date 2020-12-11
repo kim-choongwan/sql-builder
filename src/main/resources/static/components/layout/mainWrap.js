@@ -7,7 +7,7 @@ export default{
 					<top-wrap :items="items"></top-wrap>
 					<resizing className="sizingX" targetClass="top~container"></resizing>
 					<container-wrap :items="items"></container-wrap>
-				</main>`,
+				</main>`, 
 	data : function(){
 		return {
 			items : {
