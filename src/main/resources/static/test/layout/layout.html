@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Layout</title>
-<script src="https://unpkg.com/vue"></script>
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
 <link rel="stylesheet" href="/css/font-awesome/css/all.css">
 <style type="text/css">
+
+[v-cloak] {
+	display: none;
+}
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -13,7 +19,8 @@
 html, body{
 	height: 100%;
 	background: #ffdb4d;
-	
+	min-width: 1000px;
+    min-height: 1000px;
 }
 
 header {
@@ -50,19 +57,12 @@ aside.left_aside{
 	float: left;
 }
 
-.spliter{
-	background: #ffdb4d;
+.splitter{
+	background: ffdb4d;
 	width:5px;
 	height:100%;
 	cursor: w-resize;
-}
-
-.f_left{
 	float: left;
-}
-
-.f_right{
-	float: right;
 }
 
 main{
@@ -101,38 +101,23 @@ aside.right_aside{
 </style>
 </head>
 <body>
-<div id="app">
-	
-	<header class="header">
-		<!--
-		<h5>TOP</h5>
-		 -->
-		<div class="header-tool-box-view">
-			<h5>header-tool-box-view</h5>
-		</div>
-	</header>
-	<div class="center">
-		<aside class="left_aside">
-		<!--<h5>navi</h5> -->
-			<div class="view"><h5>left</h5>
-			sxxxxxxxxxxxxxxxx xxxx xxxxxx xxxxxxxxx x x x xxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxx x xxxxxxxxxxxxxx<br/>
-			
-			
-			</div>
-		</aside>
-		<div class="spliter f_left">
-		</div>
-		<main class="main">
-			<div class="view"><h5>main</h5></div>
-		</main>
-		<aside class="right_aside">
-			<div class="view"><h5>right</h5></div>
-		</aside>
-		<div class="spliter f_right">
-		</div>
-	</div>
-	<footer class="footer">
-		<div class="message-box-view"><h5>message-box-view</h5></div>
-	</footer>
+<div id="app" v-cloak >
+	<layout></layout>
 </div>
+<script type="module">
+import Layout from './layout.js';
+Vue.prototype.eventbus = new Vue();
+new Vue({
+	el:'#app',
+	data:{
+		
+	},
+	methods:{
+		method1:function(e){ alert(e.m);},
+	},
+	components:{
+		Layout
+	},
+});
+</script>
 </body>
