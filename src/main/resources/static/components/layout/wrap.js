@@ -1,13 +1,21 @@
-import topWrap 			from "./topWrap.js";
-import resizing 		from "../common/resizing.js";
-import containerWrap 	from "./containerWrap.js";
-export default{
-	name : `mainWrap`,
-	template : `<main class="wrap main">
-					<top-wrap :items="items"></top-wrap>
-					<resizing className="sizingX" targetClass="top~container"></resizing>
-					<container-wrap :items="items"></container-wrap>
-				</main>`, 
+import top from "./top.js";
+import bottom from "./bottom.js";
+import contents from "./contents.js";
+
+export default {
+	name : `wrap`,
+	template : `
+		<div class="wrap">
+			<top/>
+			<contents/>
+			<bottom/>
+		</div>
+	`,
+	components :  {
+		top,
+		contents,
+		bottom
+	}, 
 	data : function(){
 		return {
 			items : {
@@ -44,11 +52,5 @@ export default{
 		items.FUNCTIONS = ['function1','function2','function3'];
 		items.TRIGGERS = ['trigger1','trigger2','trigger3'];
 		this.items = items;
-		console.log(this.items); 
-	},
-	components : {
-		topWrap,
-		resizing,
-		containerWrap
 	}
 }

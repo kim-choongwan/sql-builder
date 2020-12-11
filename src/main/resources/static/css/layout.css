@@ -1,116 +1,62 @@
-body, p, .init{
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-}
-
-ul{
+* {
 	margin : 0px;
-	padding-left : 20px;
+	border : 0px;
+	padding : 0px;
+	font-size : 0px;
+	display : block;
 }
 
-li::marker {
+.wrap {
+	width : 100%;
+	height : 100vh;
+}
+
+.wrap *{
+	float : left;
+	width : calc(100% - 2px);
+	height : calc(100% - 4px);
+	border : 1px solid black;
+}
+
+.wrap::after{
 	content : "";
-}
-
-#app{
-	font-size : 0px;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-}
-
-.wrap{
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	display: inline-block;
-	font-size : 0px;
-}
-
-.main {
-	height: 100vh;
-	width: 100%;
-	max-height : 100vh;
-}
-
-.top{
-	width : 100%;
-	height : 15%;	
-	/* min-height : 10%;
-	max-height : 20%; */
-}
-
-.sizingX{
-	height : 0.4%;
-	background : black;
-}
-
-.sizingX:hover{
-	cursor: row-resize;
-}
-
-.sizingY{
-	width : 0.4%;
-	height: 100%;
-	background : black;
-	float: left;
-}
-
-.sizingY:hover{
-	cursor: col-resize;
-}
-
-.container{
-	width : 100%;
-	height : 84.3%;
-}
-
-.container::after{
-	content: "";
 	clear : both;
 }
 
-.left{
-	width : 28.6%;
-	height: 100%;
-	float: left;
+.top {
+	height : 8%;
+	margin-bottom : 10px;
+}
+
+.contents{
+	height : calc(100% - (16% + 26px));
+	border : 0px;
+}
+
+.contents *{
+	height : 100%;
+}
+.center{
+	width : calc(100% - (30% + 12px));
+}
+
+.left {
+	width : 15%;
 }
 
 .right{
-	width : 20.6%;
-	height: 100%;
-	float: left;
+	width : 15%;
 }
 
-.center{
-	width : 50%;
-	height: 100%;
-	float: left;
+.splitter{
+	width : 1px;
+	background-color: black;
 }
 
-.search{
-	height : 10%;
+.splitter:hover{
+	cursor : ew-resize;
 }
-.menu{
-	font-size : 15px;
-	display : block;
-	overflow : scroll;
-	height : 90%;
-}
-
-.menu-up > .menu-icon,
-.menu-down > .menu-icon,
-.menu-empty > .menu-icon{
-	width : 15px;	
-	text-align: center;
-	display : inline-block;
-}
- .menu-up > .menu-icon::after{
-	content : "+";	 
-}
-
-.menu-down > .menu-icon::after,
-.menu-empty > .menu-icon::after{
-	content : "-";
+.bottom{
+	height : 8%;
+	margin-top : 10px;
 }
