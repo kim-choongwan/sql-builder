@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<link rel="stylesheet" href="/css/common.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+
+</head>
+<body>
+
+	<div id="app" v-cloak >
+		1<hr/>
+		2<hr/>
+		{{text}}
+		<hr/>
+		<div>
+		<dim>
+			<div style="color: red; ">이것은 나오는가?</div>
+		</dim>
+		</div>
+		한글
+	</div>
+
+	<script type="module">
+import Dim from '/components/layer/dim.js'
+
+Vue.component('dim',Dim);
+
+let vm = new Vue({
+	el:'#app',
+	data:{
+		text : "낙서"
+	},
+	methods:{
+	},
+});
+</script>
+<!-- 
+//import DimDirective from '/js/directive/dim.js'
+//Vue.directive('dim', DimDirective);
+
+<div class="dim">
+	<div style="color: red; background-color: blue;">한글입니다.</div>
+</div>
+  -->
+</body>
+</html>
