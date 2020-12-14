@@ -7,24 +7,75 @@
 <link rel="stylesheet" href="/css/common.css">
 <script src="/js/vue/vue.min.js"></script>
 <script src="/js/vue/vue-router.js"></script>
-
+<style type="text/css">
+#b{
+	height: 1em;
+}
+</style>
 </head>
 <body>
-
-	<div id="app" v-cloak >
-		1<hr/>
-		2<hr/>
-		{{text}}
-		<hr/>
-		<div>
+<div id="app" v-cloak >
+<div id="a">sdf
+dsdddf<br/>
+sdddf<br/>
+dff
+<div id="b" style="background-color: red;">
+</div>
+ </div>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+<h5>xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxx xx x x xxxxxxxxxxxxx xx</h5>
+	<div>
 		<dim>
-			<div style="color: red; ">이것은 나오는가?</div>
+			<div 
+				class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front "
+				style="position: absolute; height: auto; width: 300px; top: 300px; left: 200px; display: block;">
+				<div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle">
+					<span id="ui-id-1" class="ui-dialog-title">사재기 논란 Basic dialog</span>
+					<button type="button"
+						class="
+							ui-button 
+							ui-corner-all 
+							ui-widget 
+							ui-button-icon-only 
+							ui-dialog-titlebar-close"
+						title="Close">
+						<span class="
+							ui-button-icon 
+							ui-icon
+							ui-icon-closethick"></span>
+						<span
+							class="ui-button-icon-space"> </span>Close
+					</button>
+				</div>
+				<div 
+					class="
+						ui-dialog-content 
+						ui-widget-content"
+					style="width: auto; min-height: 90px; max-height: none; height: auto;">
+					<p>실제로 앨범이 팔리지도 않았습니다.</p>
+				</div>
+			</div>
 		</dim>
-		</div>
-		한글
 	</div>
+	한글
+</div>
 
-	<script type="module">
+<script type="module">
 import Dim from '/components/layer/dim.js'
 
 Vue.component('dim',Dim);

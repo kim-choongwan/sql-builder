@@ -1,29 +1,13 @@
-[v-cloak] {
-	display: none;
-}
-
-.dim {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.03);
-}
-
-
-
-body {
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-table {
-	font-size: 1em;
-}
-
-.ui-draggable, .ui-droppable {
-	background-position: top;
-}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<link rel="stylesheet" href="/css/common.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+<style type="text/css">
 
 .ui-dialog {
     position: absolute;
@@ -140,7 +124,7 @@ table {
 }
 
 .ui-dialog .ui-dialog-titlebar-close {
-    position: absolute; /* ¿Ö Àý´ë °æ·Î ÀÎ°¡???*/
+    position: absolute;
     right: .3em;
     top: 50%;
     width: 20px;
@@ -158,13 +142,13 @@ table {
 }
 
 .ui-button .ui-icon {
-    background-image: url(/images/ui-icons_777777_256x240.png);
+    background-image: url(images/ui-icons_777777_256x240.png);
 }
 .ui-widget-header .ui-icon {
-    background-image: url(/images/ui-icons_444444_256x240.png);
+    background-image: url(images/ui-icons_444444_256x240.png);
 }
 .ui-icon, .ui-widget-content .ui-icon {
-    background-image: url(/images/ui-icons_444444_256x240.png);
+    background-image: url(images/ui-icons_444444_256x240.png);
 }
 .ui-button-icon-only .ui-icon {
     position: absolute;
@@ -337,3 +321,90 @@ p {
 div {
     display: block;
 }
+
+</style>
+</head>
+<body>
+
+	<div id="app" v-cloak >
+		1<hr/>
+		2<hr/>
+		{{text}}
+		<hr/>
+		<div>
+			<dim>
+				<div tabindex="-1" role="dialog"
+					class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable"
+					aria-describedby="dialog" aria-labelledby="ui-id-1"
+					style="position: absolute; height: auto; width: 300px; top: 126px; left: 135px; display: block;">
+					<div
+						class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle">
+						<span id="ui-id-1" class="ui-dialog-title">Basic dialog</span>
+						<button type="button"
+							class="
+								ui-button 
+								ui-corner-all 
+								ui-widget 
+								ui-button-icon-only 
+								ui-dialog-titlebar-close"
+							title="Close">
+							<span class="
+								ui-button-icon 
+								ui-icon
+								ui-icon-closethick"></span>
+							<span
+								class="ui-button-icon-space"> </span>Close
+						</button>
+					</div>
+					<div id="dialog" 
+						class="
+							ui-dialog-content 
+							ui-widget-content"
+						style="width: auto; min-height: 90px; max-height: none; height: auto;">
+						<p>This is the default dialog which is useful for displaying
+							information. The dialog window can be moved, resized and closed
+							with the 'x' icon.</p>
+					</div>
+					<div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+					<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+					<div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+					<div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+					<div
+						class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"
+						style="z-index: 90;"></div>
+					<div class="ui-resizable-handle ui-resizable-sw"
+						style="z-index: 90;"></div>
+					<div class="ui-resizable-handle ui-resizable-ne"
+						style="z-index: 90;"></div>
+					<div class="ui-resizable-handle ui-resizable-nw"
+						style="z-index: 90;"></div>
+				</div>
+			</dim>
+		</div>
+		í•œê¸€
+	</div>
+
+	<script type="module">
+import Dim from '/components/layer/dim.js'
+
+Vue.component('dim',Dim);
+
+let vm = new Vue({
+	el:'#app',
+	data:{
+		text : "ë‚™ì„œ"
+	},
+	methods:{
+	},
+});
+</script>
+<!-- 
+//import DimDirective from '/js/directive/dim.js'
+//Vue.directive('dim', DimDirective);
+
+<div class="dim">
+	<div style="color: red; background-color: blue;">í•œê¸€ìž…ë‹ˆë‹¤.</div>
+</div>
+  -->
+</body>
+</html>
