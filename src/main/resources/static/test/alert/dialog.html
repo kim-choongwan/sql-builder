@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<link rel="stylesheet" href="/css/common.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+
+.dim {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.03);
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+table {
+	font-size: 1em;
+}
+
+div {
+	display: block;
+}
+
+
+
+</style>
+</head>
+<body>
+<div id="app" v-cloak>
+	<dailog title="제목이 적히는 곳" :show="show" @close="show=!show">
+		본문을 작성한다. <br/>
+		본문을 작성한다. <br/>
+		본문을 작성한다. <br/>
+		본문을 작성한다. <br/>
+	</dailog>
+	<button @click="pop">팝업</button>
+</div>
+
+
+	<script type="module">
+import Dailog from './Dailog.js'
+import Dim from '/components/layer/dim.js'
+
+Vue.component('dim',Dim);
+
+let vm = new Vue({
+	el:'#app',
+	data:function(){
+		return {
+			show : false
+		}
+	},
+	methods:{
+		pop : function(){
+			this.show = true;
+		},
+	},
+	components: {
+		Dailog
+	}
+});
+
+</script>
+	<!-- 
+//import DimDirective from '/js/directive/dim.js'
+//Vue.directive('dim', DimDirective);
+
+<div class="dim">
+	<div style="color: red; background-color: blue;">한글입니다.</div>
+</div>
+  -->
+</body>
+</html>

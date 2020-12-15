@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SampleComponent</title>
+<link rel="stylesheet" href="/css/font-awesome/css/all.css">
+<script src="/js/vue/vue.min.js"></script>
+<script src="/js/vue/vue-router.js"></script>
+<style type="text/css">
+[v-cloak] {
+	display: none;
+}
+
+.dim {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.03);
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+table {
+	font-size: 1em;
+}
+
+div {
+	display: block;
+}
+/*
+.ui-helper:before, .ui-helper:after {
+    content: "";
+    display: table;
+    border-collapse: collapse;
+}
+.ui-helper:after {
+    clear: both;
+}
+*/
+.dialog {
+	border: thin solid #e9e9e9;
+	position: absolute;
+	top: 100px;
+	left: 200px;
+	width: 300px;
+	height: auto;
+	border-radius: 3px;
+	background: #ffffff;
+	color: #333333;
+	padding: 0.3em;
+}
+
+.dialog-header {
+	background: #e9e9e9;
+	color: #333333;
+	border-radius: 3px;
+	font-weight: bold;
+	padding: .4em 1em;
+	position: relative;
+	overflow: hidden;
+}
+
+.dialog-title {
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 90%;
+	margin: .1em 0;
+}
+
+.dialog-close-btn {
+	position: absolute;
+	top: 0.4em;
+	right: 0.5em;
+	width: 1em;
+	text-align: center;
+	cursor: pointer;
+	font-size: 1.2em;
+}
+
+.dialog-contents {
+	padding: 0.5em 1em;
+}
+</style>
+</head>
+<body>
+    
+    <!-- 
+    float:left; overflow: hidden; white-space: nowrap; width: 90%; text-overflow: ellipsis; margin: .1em 0;
+    float:left; overflow: hidden; 를 주지 않으면 우측으로 쭉 흘러감.
+    white-space: nowrap; 을 주지 않으면 행이 변경됨.
+    text-overflow: ellipsis 을 주지 않으면 ... 으로 표현되지 않음.
+     -->
+
+
+	<div id="app" v-cloak>
+		<dim v-if="show">
+			<div class="dialog">
+				<div class="dialog-header">
+					<span class="dialog-title">제목바 sdfasdfasdfsafasdfsadfasdfasdfasdfasdfasdf sdfsdf sdfsdf</span>
+					<div class="dialog-close-btn" @click="onClick"><i class="fas fa-times" ></i></div>
+				</div>
+				<div class="dialog-contents">
+					<p>내용이 적히는 곳입니다. 숼라 숼라. ㄴㅇㄹㄴㅇㄹㅇㄴㄹ</p>
+					<p>내용이 적히는 곳입니다. 숼라 숼라. ㄴㅇㄹㄴㅇㄹㅇㄴㄹ</p>
+					<p>내용이 적히는 곳입니다. 숼라 숼라. ㄴㅇㄹㄴㅇㄹㅇㄴㄹ</p>
+				</div>
+			</div>
+		</dim>
+	</div>
+
+<!-- 
+Vue.directive('draggable',{
+	bind(el,binding,vnode,oldVnode){
+		console.log('draggable','bind');  
+		console.log(el); 
+		console.log('vnode',vnode);
+		console.log('vnode.data.directives',vnode.data.directives);
+
+	},
+	inserted(el,binding,vnode,oldVnode){
+		console.log('draggable','inserted');
+		console.log(el); 
+		console.log('vnode.data.directives',vnode.data.directives);
+	},
+	update(el,binding,vnode,oldVnode){
+		console.log('draggable','update');
+		console.log(el);
+	},
+	componentUpdated(el,binding,vnode,oldVnode){
+		console.log('draggable','componentUpdated');
+		console.log(el);
+	},
+	unbind(el,binding,vnode,oldVnode){
+		console.log('draggable','unbind');
+		console.log(el);
+	},
+});
+
+Vue.directive('draggableHandle',{
+	bind(el,binding,vnode,oldVnode){
+		console.log('draggableHandle','bind');  
+		console.log(el); 
+		console.log('vnode',vnode);
+		console.log('vnode.data.directives',vnode.data.directives);
+	},
+	inserted(el,binding,vnode,oldVnode){
+		console.log('draggableHandle','inserted');
+		console.log(el); 
+		console.log('vnode.data.directives',vnode.data.directives);
+	},
+	update(el,binding,vnode,oldVnode){
+		console.log('draggableHandle','update');
+		console.log(el);
+	},
+	componentUpdated(el,binding,vnode,oldVnode){
+		console.log('draggableHandle','componentUpdated');
+		console.log(el);
+	},
+	unbind(el,binding,vnode,oldVnode){
+		console.log('draggableHandle','unbind');
+		console.log(el);
+	},
+});
+
+
+ -->
+
+
+	<script type="module">
+import Dim from '/components/layer/dim.js'
+
+Vue.component('dim',Dim);
+
+let vm = new Vue({
+	el:'#app',
+	data:function(){
+		return {
+			show:true
+		}
+	},
+	methods:{
+		onClick(){
+			this.show = false;
+		}
+	},
+});
+
+</script>
+	<!-- 
+//import DimDirective from '/js/directive/dim.js'
+//Vue.directive('dim', DimDirective);
+
+<div class="dim">
+	<div style="color: red; background-color: blue;">한글입니다.</div>
+</div>
+  -->
+</body>
+</html>

@@ -4,325 +4,10 @@
 <meta charset="UTF-8">
 <title>SampleComponent</title>
 <link rel="stylesheet" href="/css/font-awesome/css/all.css">
-<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/common2.css">
 <script src="/js/vue/vue.min.js"></script>
 <script src="/js/vue/vue-router.js"></script>
-<style type="text/css">
 
-.ui-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: .2em;
-    outline: 0;
-}
-
-.ui-corner-all{
-	border-radius: 3px;
-}
-
-.ui-widget {
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 1em;
-}
-
-.ui-widget-content {
-    border: 1px solid #dddddd;
-    background: #ffffff;
-    color: #333333;
-}
-
-.ui-widget.ui-widget-content {
-    border: 1px solid #c5c5c5;
-}
-
-.ui-draggable, .ui-droppable {
-    background-position: top;
-}
-
-.ui-resizable {
-    position: relative;
-}
-
-.ui-draggable .ui-dialog-titlebar {
-    cursor: move;
-}
-
-.ui-dialog .ui-dialog-titlebar {
-    padding: .4em 1em;
-    position: relative;
-}
-
-.ui-widget-header {
-    border: 1px solid #dddddd;
-    background: #e9e9e9;
-    color: #333333;
-    font-weight: bold;
-}
-
-.ui-helper-clearfix:before, .ui-helper-clearfix:after {
-    content: "";
-    display: table;
-    border-collapse: collapse;
-}
-
-.ui-helper-clearfix:after {
-    clear: both;
-}
-
-.ui-draggable-handle {
-    -ms-touch-action: none;
-    touch-action: none;
-}
-
-.ui-dialog .ui-dialog-title {
-    float: left;
-    margin: .1em 0;
-    white-space: nowrap;
-    width: 90%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.ui-draggable .ui-dialog-titlebar {
-    cursor: move;
-}
-
-.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button {
-    color: #454545;
-    text-decoration: none;
-}
-
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-    border: 1px solid #c5c5c5;
-    background: #f6f6f6;
-    font-weight: normal;
-    color: #454545;
-}
-.ui-button-icon-only {
-    width: 2em;
-    box-sizing: border-box;
-    text-indent: -9999px;
-    white-space: nowrap;
-}
-.ui-button, .ui-button:link, .ui-button:visited, .ui-button:hover, .ui-button:active {
-    text-decoration: none;
-}
-.ui-button {
-    padding: .4em 1em;
-    display: inline-block;
-    position: relative;
-    line-height: normal;
-    margin-right: .1em;
-    cursor: pointer;
-    vertical-align: middle;
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    overflow: visible;
-}
-
-.ui-dialog .ui-dialog-titlebar-close {
-    position: absolute;
-    right: .3em;
-    top: 50%;
-    width: 20px;
-    margin: -10px 0 0 0;
-    padding: 1px;
-    height: 20px;
-}
-
-.ui-button-icon-only .ui-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -8px;
-    margin-left: -8px;
-}
-
-.ui-button .ui-icon {
-    background-image: url(images/ui-icons_777777_256x240.png);
-}
-.ui-widget-header .ui-icon {
-    background-image: url(images/ui-icons_444444_256x240.png);
-}
-.ui-icon, .ui-widget-content .ui-icon {
-    background-image: url(images/ui-icons_444444_256x240.png);
-}
-.ui-button-icon-only .ui-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -8px;
-    margin-left: -8px;
-}
-.ui-icon-closethick {
-    background-position: -96px -128px;
-}
-.ui-icon {
-    width: 16px;
-    height: 16px;
-}
-.ui-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -.25em;
-    position: relative;
-    text-indent: -99999px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-}
-.ui-dialog .ui-dialog-content {
-    position: relative;
-    border: 0;
-    padding: .5em 1em;
-    background: none;
-    overflow: auto;
-}
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-.ui-dialog .ui-resizable-n {
-    height: 2px;
-    top: 0;
-}
-.ui-resizable-n {
-    cursor: n-resize;
-    height: 7px;
-    width: 100%;
-    top: -5px;
-    left: 0;
-}
-.ui-dialog .ui-resizable-e {
-    width: 2px;
-    right: 0;
-}
-.ui-resizable-e {
-    cursor: e-resize;
-    width: 7px;
-    right: -5px;
-    top: 0;
-    height: 100%;
-}
-.ui-dialog .ui-resizable-s {
-    height: 2px;
-    bottom: 0;
-}
-.ui-dialog .ui-resizable-w {
-    width: 2px;
-    left: 0;
-}
-
-.ui-resizable-w {
-    cursor: w-resize;
-    width: 7px;
-    left: -5px;
-    top: 0;
-    height: 100%;
-}
-.ui-resizable-s {
-    cursor: s-resize;
-    height: 7px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-}
-
-.ui-resizable-handle {
-    position: absolute;
-    font-size: 0.1px;
-    display: block;
-    -ms-touch-action: none;
-    touch-action: none;
-}
-
-.ui-icon, .ui-widget-content .ui-icon {
-    background-image: url(images/ui-icons_444444_256x240.png);
-}
-.ui-dialog .ui-resizable-se {
-    right: 0;
-    bottom: 0;
-}
-.ui-dialog .ui-resizable-se, .ui-dialog .ui-resizable-sw, .ui-dialog .ui-resizable-ne, .ui-dialog .ui-resizable-nw {
-    width: 7px;
-    height: 7px;
-}
-
-.ui-icon-gripsmall-diagonal-se {
-    background-position: -64px -224px;
-}
-.ui-icon {
-    width: 16px;
-    height: 16px;
-}
-.ui-resizable-se {
-    cursor: se-resize;
-    width: 12px;
-    height: 12px;
-    right: 1px;
-    bottom: 1px;
-}
-.ui-resizable-handle {
-    position: absolute;
-    font-size: 0.1px;
-    display: block;
-    -ms-touch-action: none;
-    touch-action: none;
-}
-.ui-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -.25em;
-    position: relative;
-    text-indent: -99999px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-}
-
-.ui-dialog .ui-resizable-sw {
-    left: 0;
-    bottom: 0;
-}
-
-.ui-dialog .ui-resizable-se, .ui-dialog .ui-resizable-sw, .ui-dialog .ui-resizable-ne, .ui-dialog .ui-resizable-nw {
-    width: 7px;
-    height: 7px;
-}
-.ui-resizable-sw {
-    cursor: sw-resize;
-    width: 9px;
-    height: 9px;
-    left: -5px;
-    bottom: -5px;
-}
-.ui-resizable-handle {
-    position: absolute;
-    font-size: 0.1px;
-    display: block;
-    -ms-touch-action: none;
-    touch-action: none;
-}
-.ui-dialog .ui-resizable-ne {
-    right: 0;
-    top: 0;
-}
-
-.ui-dialog .ui-resizable-nw {
-    left: 0;
-    top: 0;
-}
-
-div {
-    display: block;
-}
-
-</style>
 </head>
 <body>
 
@@ -338,8 +23,8 @@ div {
 					aria-describedby="dialog" aria-labelledby="ui-id-1"
 					style="position: absolute; height: auto; width: 300px; top: 126px; left: 135px; display: block;">
 					<div
-						class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle">
-						<span id="ui-id-1" class="ui-dialog-title">Basic dialog</span>
+						class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle" style="border: 1px solid red;">
+						<span id="ui-id-1" class="ui-dialog-title" style="border: 1px solid red;">Basic dialog</span>
 						<button type="button"
 							class="
 								ui-button 
@@ -351,7 +36,7 @@ div {
 							<span class="
 								ui-button-icon 
 								ui-icon
-								ui-icon-closethick"></span>
+								ui-icon-closethick" style="border: 1px solid red;"></span>
 							<span
 								class="ui-button-icon-space"> </span>Close
 						</button>
@@ -360,7 +45,7 @@ div {
 						class="
 							ui-dialog-content 
 							ui-widget-content"
-						style="width: auto; min-height: 90px; max-height: none; height: auto;">
+						style="width: auto; min-height: 90px; max-height: none; height: auto;border: 1px solid red;" >
 						<p>This is the default dialog which is useful for displaying
 							information. The dialog window can be moved, resized and closed
 							with the 'x' icon.</p>
