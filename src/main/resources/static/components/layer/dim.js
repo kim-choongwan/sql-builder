@@ -24,7 +24,7 @@ export default{
 	},
 	data : function(){
 		var i = next();
-		console.log(i);
+		//console.log(i);
 		return {
 			style : {
 				zIndex :i 

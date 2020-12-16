@@ -40,7 +40,7 @@ div {
 </head>
 <body>
 <div id="app" v-cloak>
-	<dailog title="제목이 적히는 곳" :show="show" @close="show=!show">
+	<dailog title="제목이 적히는 곳" :show="show" @close="show=!show" top="100" left="200" width="300">
 		본문을 작성한다. <br/>
 		본문을 작성한다. <br/>
 		본문을 작성한다. <br/>
@@ -51,7 +51,7 @@ div {
 
 
 	<script type="module">
-import Dailog from './Dailog.js'
+import Dailog from './Dialog.js'
 import Dim from '/components/layer/dim.js'
 
 Vue.component('dim',Dim);
@@ -72,15 +72,7 @@ let vm = new Vue({
 		Dailog
 	}
 });
-
 </script>
-	<!-- 
-//import DimDirective from '/js/directive/dim.js'
-//Vue.directive('dim', DimDirective);
 
-<div class="dim">
-	<div style="color: red; background-color: blue;">한글입니다.</div>
-</div>
-  -->
 </body>
 </html>
